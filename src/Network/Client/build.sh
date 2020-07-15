@@ -1,1 +1,1 @@
-g++ client.cpp -lzephyr -lpkg -lsibe -lsodium -lpthread -lprotobuf -lgrpc++ -lcurl
+g++ client.cpp -lzephyr -lpkg -lssl -lcrypto -lsibe -lsodium -lpthread -lprotobuf -lgrpc++ -lcurl

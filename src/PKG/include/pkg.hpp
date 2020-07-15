@@ -35,7 +35,6 @@
 #include <boost/numeric/conversion/cast.hpp>
 #include <boost/lexical_cast.hpp>
 #include <sodium/crypto_secretbox.h>
-#include <mcl/bls12_381.hpp>
 #include <sodium/randombytes.h>
 #include <sodium/crypto_hash_sha256.h>
 #include <cereal/types/string.hpp>
@@ -47,32 +46,6 @@ extern "C"{
     #include <sibe/ibe.h>
     #include <sibe/ibe_progs.h>
 }
-
-struct master_pub_k {
-    G1 g1;
-};
-
-struct master_pri_k {
-    Fr s;
-};
-
-struct id_pri_key {
-    G2 d;
-    G2 q;
-};
-
-struct ciphertext{
-    G1 U;
-    unsigned char V[crypto_secretbox_MACBYTES+10000];
-    unsigned char nonce[crypto_box_NONCEBYTES];
-};
-
-typedef struct ciphertext ciphertext;
-typedef struct master_pub_k m_pub_k;
-typedef struct master_pri_k m_pri_k;
-typedef struct id_pri_key id_pri_key;
-mcl::bn::G1 generator;
-
 
 struct contents{
     std::string nonce;

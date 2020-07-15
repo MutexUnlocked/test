@@ -18,8 +18,6 @@
 
 #include "pkg.hpp"
 
-using namespace mcl::bn;
-
 
 void PKG::setup(std::string system){
      //initialize IBE library
