@@ -1,0 +1,1 @@
+g++ -std=c++11 infonode.cpp -lzephyr  -lprotobuf -lgrpc++ -lpthread  -lopendht -lgnutls -lboost_system -o infonode
