@@ -62,13 +62,6 @@ make -j8
 sudo make install
 cd ../
 
-git clone https://github.com/mutexunlocked/crypto
-cd crypto
-cd stanfordibe
-cp /root/test/src/Network/Server/docker/libssl.so.1.0.0 .
-make
-make install
-cd ../../
 
 git clone https://github.com/mutexunlocked/libsodium
 cd libsodium
@@ -94,3 +87,12 @@ git submodule update --init
 make
 make install
 cd ../
+
+
+git clone https://github.com/mutexunlocked/crypto
+cd crypto
+cd stanfordibe
+cp /root/test/src/Network/Server/docker/libssl.so.1.0.0 .
+make
+make install
+cd ../../
