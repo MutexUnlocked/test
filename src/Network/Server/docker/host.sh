@@ -47,13 +47,7 @@ apt-get update && apt-get install -y \
   libssl-dev \
   libiberty-dev
 
-mkdir /app
-git clone https://github.com/DokuEnterprise/congenial-zephyr /app/congenial-zephyr
-cd /app/congenial-zephyr/src
-cp /app/congenial-zephyr/src/Network/Server/docker/deps.sh /app
-chmod a+x /app/deps.sh
-cd /app && ./deps.sh
-cp /app/congenial-zephyr/src/Network/Server/docker/zephyr.sh /app
-chmod a+x /app/zephyr.sh
-cd /app && ./zephyr.sh
+chmod a+x deps.sh
+./deps.sh
+./zephyr.sh
 export LD_LIBRARY_PATH=/usr/local/lib
