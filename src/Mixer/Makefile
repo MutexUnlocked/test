@@ -5,7 +5,7 @@ ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
  
 #-ljsoncpp -ljsonrpccpp-common -ljsonrpccpp-client
 CPPFLAGS= -std=c++14 -I$(ROOT_DIR)/../utils -fomit-frame-pointer -fPIC -DQHASM -lrpc
-LDFLAGS= -shared -L/usr/local/lib  -lsodium  -lcrypto -lssl -lpthread -ljsonrpccpp-server -lopendht -lgnutls 
+LDFLAGS= -shared -L/usr/local/lib  -lsodium  -lcrypto -lssl -lpthread  -lopendht -lgnutls 
 
 SOURCES = $(shell echo *.cpp)
 HEADERS = $(shell echo *.hpp)
