@@ -4,6 +4,7 @@
 using namespace node;
 
 
+MyCout ccout;
 int main(int argc, char** argv) {
   // Expect only arg: --db_path=path/to/route_guide_db.json.
   NodeClient guide(
