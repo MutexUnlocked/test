@@ -29,13 +29,11 @@ apt-get update && apt-get install -y \
   libevent-dev \
   libdouble-conversion-dev \
   libgoogle-glog-dev \
-  libjsonrpccpp-dev \
   iputils-ping \
   net-tools \
   netcat \
   libmicrohttpd-dev \
   libcurl4-gnutls-dev \
-  libjsonrpccpp-tools \
   libgflags-dev \
   liblz4-dev \
   liblzma-dev \

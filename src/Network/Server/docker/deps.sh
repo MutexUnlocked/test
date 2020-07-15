@@ -4,11 +4,6 @@ set -evu
 PREFIX=/usr/local
 
 
-if [ "$OS" == "arch" ] || [ "$OS" == "fedora" ]
-then
-	PREFIX=/usr
-fi
-
 export LD_LIBRARY_PATH=$PREFIX/lib
 export CPLUS_INCLUDE_PATH=$PREFIX/include
 export CURRENT_PATH=.
