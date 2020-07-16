@@ -158,6 +158,12 @@ int main(){
                 auto d = x;
                    
                 std::cout << "THIS IS WHAT I GOT " << std::endl;
+
+    auto end = std::chrono::system_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end-start;
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+    std::cout << "finished computation at " << std::ctime(&end_time)
+              << "elapsed time: " << elapsed_seconds.count() << "s\n";
                 std::cout << d << std::endl;
                 //TODO: Fix encrytion run a test on the local system first
                 auto j = pkg_decrypt(d, keyb, paramsb);
@@ -167,11 +173,6 @@ int main(){
         }
     }
 
-    auto end = std::chrono::system_clock::now();
-    std::chrono::duration<double> elapsed_seconds = end-start;
-    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-    std::cout << "finished computation at " << std::ctime(&end_time)
-              << "elapsed time: " << elapsed_seconds.count() << "s\n";
     return 0;
 }
 
