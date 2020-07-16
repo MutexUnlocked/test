@@ -14,7 +14,7 @@
 std::vector<std::string> msgtmp;
 std::vector<std::string> outbox;
 std::vector<std::string> msgtmp2;
-
+MyCout ccout;
 std::vector<std::string> needrequests;
 std::vector<std::string> keys;
 std::string INFONODEIP;
