@@ -85,7 +85,7 @@ int main(){
     // cin >> email;
     // cout << "Enter config file path" << endl;
     // cin >> filepath;
-    filepath= "/home/professor/dems";
+    filepath= "/dems";
 
     // Load the configuration file
     //string filepath = "";

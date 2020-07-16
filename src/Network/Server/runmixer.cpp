@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <string>
 
+MyCout ccout;
 using namespace std;
 
 // void handler(int s){
