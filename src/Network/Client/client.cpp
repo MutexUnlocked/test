@@ -138,7 +138,7 @@ int main(){
     createciphertext(mixerKeys, encdata);
 
     NodeClient mailreq(
-    grpc::CreateChannel(/*mailboxaddress + */ "172.18.0.7:50051",
+    grpc::CreateChannel(/*mailboxaddress + */ "10.108.0.8:50051",
                             grpc::InsecureChannelCredentials()));
 
     std::cout << "-------------- GetMessages --------------" << std::endl;
@@ -202,18 +202,25 @@ int createciphertext(std::vector<std::string> mixerKeys, std::string encmsg){
 
     box_seal<> sb{};
     std::vector<sodium::keypair<>> boxes;
-    for(auto x : mixers){
+    //for(auto x : mixers){
         sodium::keypair<> mix{};
-        mix.public_key_ = x.second;
+	sodium::keypair<> mix1{};
+	sodium::keypair<> mix2{};
+        mix.public_key_ = mixers[0].second;
+	mix1.public_key_ = mixers[1].second;
+	mix2.public_key_ = mixers[2].second;
 
         boxes.push_back(mix);
-    }
+	boxes.push_back(mix1);
+	boxes.push_back(mix2);
+	std::cout << "LOVE" << std::endl;
+    //}
     
     //TODO: Create mailbox code and fix addresses
-    int num = rand() % config[1].size() -1;
-    auto x = config[1][num];
-    std::cout << "Talking to " << x << std::endl;
-    mailboxaddress = "172.18.0.7";
+    //int num = rand() % config[1].size() -1;
+    //auto x = config[1][num];
+    //std::cout << "Talking to " << x << std::endl;
+    mailboxaddress = "10.108.0.8";
     std::cout << "YOUR MAILBOX IS " << mailboxaddress << std::endl;
 
     std::string enctmp = encmsg;
