@@ -94,7 +94,6 @@ std::vector<std::string> getkeysfrompkg(std::string hostname, std::string portnu
         std::cout << "REQ" << req << std::endl;
         if(req == "Looking good, I will send you your keys."){
             std::cout << "Getting Keys...";
-            sleep(20);
             ws.read(buffer);
             os << beast::make_printable(buffer.data());
             std::string key = os.str();
